@@ -166,22 +166,7 @@ WebAssembly.instantiateStreaming(fetch("doom.wasm"), importObject).then(
       false
     );
 
-    /*mobile touch input*/
-    [
-      ["enterButton", 13],
-      ["leftButton", 0xac],
-      ["rightButton", 0xae],
-      ["upButton", 0xad],
-      ["downButton", 0xaf],
-      ["ctrlButton", 0x80 + 0x1d],
-      ["spaceButton", 32],
-      ["altButton", 0x80 + 0x38],
-    ].forEach(([elementID, keyCode]) => {
-      let button = document.getElementById(elementID);
-      button.addEventListener("touchstart", () => keyDown(keyCode));
-      button.addEventListener("touchend", () => keyUp(keyCode));
-      button.addEventListener("touchcancel", () => keyUp(keyCode));
-    });
+    
 
     /*hint that the canvas should have focus to capute keyboard events*/
     const focushint = document.getElementById("focushint");
