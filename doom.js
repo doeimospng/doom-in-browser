@@ -207,6 +207,5 @@ WebAssembly.instantiateStreaming(fetch("doom.wasm"), importObject).then(
     window.requestAnimationFrame(step);
 
     window.doomLoaded = true;
-    document.getElementById("message").innerText = 'Ready! Click anywhere to play.'
   }
 );
