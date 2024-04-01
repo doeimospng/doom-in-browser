@@ -34,9 +34,32 @@
             zoom: 0.4;
             pointer-events: none;
         }
+
+.doomitself {
+position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+}
+
         
         video {
             zoom: 2;
+/* Make video to at least 100% wide and tall */
+  min-width: 100%; 
+  min-height: 100%; 
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+
+  /* Center the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
         }
     </style>
 </head>
@@ -53,8 +76,8 @@
         gettmilliseconds calls per second: <span id="getmsps_stats">0</span> Total getmilliseconds calls: <span id="getms_stats">0</span><br /> DooM FPS: <span id="fps_stats">0</span> (target: 35FPS) Total Frames drawn: <span id="drawframes_stats">0</span><br
         /> Browser Animation FPS: <span id="animationfps_stats">0</span> (target: around 60FPS, depending on browser)<br />
     </div>
-    <div id="doomitself"><
-    <video id="doom-video" width="1224.88px" height="650"></video>
+    <div class="doomitself"><
+    <video class="doom-video"></video>
     </div>
 </body>
 
